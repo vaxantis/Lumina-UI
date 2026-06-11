@@ -511,7 +511,7 @@ See [LICENSE](LICENSE) for the full text.
 <img src="https://capsule-render.vercel.app/api?type=waving&color=6366f1,8b5cf6&height=100&section=footer" width="100%" />
 
 <p>
-  <sub>Built with care · Powered by Radix UI + Framer Motion</sub>
+  <sub>Built with care · Powered by Devnest LLC</sub>
 </p>
 
 <p>
