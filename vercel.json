@@ -1,6 +1,6 @@
 {
   "installCommand": "pnpm install",
   "buildCommand": "pnpm turbo run build --filter=@lumina-ui/docs",
-  "outputDirectory": "apps/docs/.next",
+  "outputDirectory": ".next",
   "framework": "nextjs"
 }
