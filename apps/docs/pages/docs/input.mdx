@@ -1,0 +1,73 @@
+---
+title: Input
+---
+
+# Input
+
+A styled `<input>` and `<textarea>` with size variants and an `invalid` prop that wires `aria-invalid` for accessible error states.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add input
+# deps: clsx
+```
+
+## Usage
+
+```tsx
+import { Input, Textarea, Label } from '@lumina-ui/react'
+
+export default function Form() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <Label htmlFor="email">Email address</Label>
+      <Input id="email" type="email" placeholder="you@example.com" />
+    </div>
+  )
+}
+```
+
+## Sizes
+
+```tsx
+<Input size="sm" placeholder="Small" />
+<Input size="md" placeholder="Medium (default)" />
+<Input size="lg" placeholder="Large" />
+```
+
+## Invalid state
+
+```tsx
+<Input invalid placeholder="Invalid input" />
+```
+
+Sets `aria-invalid="true"` and applies a destructive-color ring on focus.
+
+## Textarea
+
+```tsx
+<Textarea placeholder="Write something…" rows={4} />
+<Textarea invalid placeholder="Error message here" />
+```
+
+## Props — Input
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Height and font size |
+| `invalid` | `boolean` | `false` | Sets `aria-invalid` and error ring |
+
+All other `<input>` attributes are forwarded.
+
+## Props — Textarea
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `invalid` | `boolean` | `false` | Sets `aria-invalid` and error ring |
+
+All other `<textarea>` attributes are forwarded.

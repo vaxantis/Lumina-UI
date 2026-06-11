@@ -1,0 +1,109 @@
+---
+title: Dialog
+---
+
+# Dialog
+
+A modal dialog built on `@radix-ui/react-dialog` with overlay fade and content scale/slide animations via Framer Motion. Handles focus trap, scroll lock, and `Escape` to close automatically.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add dialog
+# deps: @radix-ui/react-dialog framer-motion clsx
+```
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+  DialogFooter,
+} from '@lumina-ui/react'
+import { Button } from '@lumina-ui/react'
+
+export default function Example() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you are done.
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant="outline">Cancel</Button>
+          </DialogClose>
+          <Button>Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```
+
+## Controlled
+
+```tsx
+import { useState } from 'react'
+
+export default function Controlled() {
+  const [open, setOpen] = useState(false)
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button onClick={() => setOpen(true)}>Open</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogTitle>Controlled dialog</DialogTitle>
+        <Button onClick={() => setOpen(false)}>Close</Button>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```
+
+## Component API
+
+| Component | Description |
+|-----------|-------------|
+| `Dialog` | Root — manages open state |
+| `DialogTrigger` | Opens the dialog on click (Radix primitive, supports `asChild`) |
+| `DialogClose` | Closes the dialog on click (supports `asChild`) |
+| `DialogContent` | Animated overlay + content panel |
+| `DialogHeader` | Layout wrapper for title/description |
+| `DialogTitle` | Required — provides accessible dialog name |
+| `DialogDescription` | Optional — provides accessible description |
+| `DialogFooter` | Layout wrapper for action buttons |
+
+## Props — Dialog
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | — | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Open state change handler |
+| `defaultOpen` | `boolean` | `false` | Initial open state (uncontrolled) |
+| `modal` | `boolean` | `true` | Whether to block interaction outside |
+
+## Accessibility
+
+- Focus traps inside the dialog when open
+- `Escape` closes the dialog
+- `DialogTitle` is required for `aria-labelledby`
+- Scroll is locked when dialog is open
+- Enter/exit animations disabled when `prefers-reduced-motion` is set

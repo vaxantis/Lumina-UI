@@ -1,0 +1,169 @@
+/* Lumina UI — Design Tokens */
+
+:root {
+  /* ── Color — Light ──────────────────────────────── */
+  --lumina-color-background:           oklch(0.985 0 0);
+  --lumina-color-surface:              oklch(0.965 0.005 265);
+  --lumina-color-surface-raised:       oklch(0.945 0.008 265);
+
+  --lumina-color-foreground:           oklch(0.13 0.025 265);
+  --lumina-color-foreground-muted:     oklch(0.48 0.03 265);
+  --lumina-color-muted-foreground:     oklch(0.48 0.03 265); /* alias */
+
+  /* Indigo primary */
+  --lumina-color-primary:              oklch(0.52 0.24 265);
+  --lumina-color-primary-hover:        oklch(0.46 0.24 265);
+  --lumina-color-primary-foreground:   oklch(0.99 0 0);
+  --lumina-color-primary-glow:         oklch(0.52 0.24 265 / 30%);
+
+  --lumina-color-secondary:            oklch(0.93 0.012 265);
+  --lumina-color-secondary-foreground: oklch(0.13 0.025 265);
+
+  --lumina-color-muted:                oklch(0.93 0.012 265);
+  --lumina-color-accent:               oklch(0.93 0.012 265);
+  --lumina-color-accent-foreground:    oklch(0.13 0.025 265);
+
+  --lumina-color-destructive:          oklch(0.58 0.245 25);
+  --lumina-color-destructive-hover:    oklch(0.52 0.245 25);
+  --lumina-color-destructive-foreground: oklch(0.99 0 0);
+  --lumina-color-destructive-glow:     oklch(0.58 0.245 25 / 30%);
+
+  --lumina-color-border:               oklch(0.88 0.012 265);
+  --lumina-color-input:                oklch(0.88 0.012 265);
+  --lumina-color-ring:                 oklch(0.52 0.24 265 / 45%);
+  --lumina-color-overlay:              oklch(0 0 0 / 40%);
+
+  /* Gradients */
+  --lumina-gradient-primary: linear-gradient(135deg, oklch(0.52 0.24 265), oklch(0.54 0.22 290));
+  --lumina-gradient-destructive: linear-gradient(135deg, oklch(0.58 0.245 25), oklch(0.56 0.22 10));
+
+  /* ── Border Radius ───────────────────────────────── */
+  --lumina-radius-xs:   0.125rem;
+  --lumina-radius-sm:   0.25rem;
+  --lumina-radius-md:   0.5rem;
+  --lumina-radius-lg:   0.75rem;
+  --lumina-radius-xl:   1rem;
+  --lumina-radius-2xl:  1.5rem;
+  --lumina-radius-full: 9999px;
+
+  /* ── Typography ──────────────────────────────────── */
+  --lumina-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --lumina-font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+
+  --lumina-font-size-xs:   0.75rem;
+  --lumina-font-size-sm:   0.875rem;
+  --lumina-font-size-base: 1rem;
+  --lumina-font-size-lg:   1.125rem;
+  --lumina-font-size-xl:   1.25rem;
+
+  --lumina-line-height-tight:  1.25;
+  --lumina-line-height-normal: 1.5;
+
+  --lumina-font-weight-normal:   400;
+  --lumina-font-weight-medium:   500;
+  --lumina-font-weight-semibold: 600;
+  --lumina-font-weight-bold:     700;
+
+  /* ── Spacing ─────────────────────────────────────── */
+  --lumina-space-1:  0.25rem;
+  --lumina-space-2:  0.5rem;
+  --lumina-space-3:  0.75rem;
+  --lumina-space-4:  1rem;
+  --lumina-space-5:  1.25rem;
+  --lumina-space-6:  1.5rem;
+  --lumina-space-8:  2rem;
+  --lumina-space-10: 2.5rem;
+  --lumina-space-12: 3rem;
+
+  /* ── Shadows ─────────────────────────────────────── */
+  --lumina-shadow-xs: 0 1px 2px oklch(0 0 0 / 6%);
+  --lumina-shadow-sm: 0 1px 3px oklch(0 0 0 / 8%), 0 1px 2px oklch(0 0 0 / 6%);
+  --lumina-shadow-md: 0 4px 12px oklch(0 0 0 / 10%), 0 2px 4px oklch(0 0 0 / 8%);
+  --lumina-shadow-lg: 0 12px 24px oklch(0 0 0 / 12%), 0 4px 8px oklch(0 0 0 / 8%);
+  --lumina-shadow-xl: 0 24px 48px oklch(0 0 0 / 15%), 0 8px 16px oklch(0 0 0 / 10%);
+
+  /* ── Animation ───────────────────────────────────── */
+  --lumina-duration-fast:   100ms;
+  --lumina-duration-normal: 180ms;
+  --lumina-duration-slow:   280ms;
+  --lumina-easing-default:  cubic-bezier(0.4, 0, 0.2, 1);
+  --lumina-easing-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --lumina-easing-out:      cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* ── Dark mode ───────────────────────────────────── */
+.lumina-dark {
+  --lumina-color-background:           oklch(0.076 0.02 265);
+  --lumina-color-surface:              oklch(0.115 0.018 265);
+  --lumina-color-surface-raised:       oklch(0.155 0.018 265);
+
+  --lumina-color-foreground:           oklch(0.96 0.005 265);
+  --lumina-color-foreground-muted:     oklch(0.52 0.03 265);
+  --lumina-color-muted-foreground:     oklch(0.52 0.03 265);
+
+  --lumina-color-primary:              oklch(0.63 0.22 265);
+  --lumina-color-primary-hover:        oklch(0.70 0.22 265);
+  --lumina-color-primary-foreground:   oklch(0.99 0 0);
+  --lumina-color-primary-glow:         oklch(0.63 0.22 265 / 35%);
+
+  --lumina-color-secondary:            oklch(0.155 0.02 265);
+  --lumina-color-secondary-foreground: oklch(0.88 0.01 265);
+
+  --lumina-color-muted:                oklch(0.155 0.02 265);
+  --lumina-color-accent:               oklch(0.18 0.02 265);
+  --lumina-color-accent-foreground:    oklch(0.96 0.005 265);
+
+  --lumina-color-destructive:          oklch(0.68 0.22 22);
+  --lumina-color-destructive-hover:    oklch(0.74 0.22 22);
+  --lumina-color-destructive-foreground: oklch(0.99 0 0);
+  --lumina-color-destructive-glow:     oklch(0.68 0.22 22 / 35%);
+
+  --lumina-color-border:               oklch(1 0 0 / 9%);
+  --lumina-color-input:                oklch(1 0 0 / 7%);
+  --lumina-color-ring:                 oklch(0.63 0.22 265 / 40%);
+  --lumina-color-overlay:              oklch(0 0 0 / 65%);
+
+  --lumina-gradient-primary: linear-gradient(135deg, oklch(0.63 0.22 265), oklch(0.62 0.20 292));
+  --lumina-gradient-destructive: linear-gradient(135deg, oklch(0.68 0.22 22), oklch(0.65 0.20 8));
+
+  --lumina-shadow-xs: 0 1px 2px oklch(0 0 0 / 25%);
+  --lumina-shadow-sm: 0 1px 3px oklch(0 0 0 / 30%), 0 1px 2px oklch(0 0 0 / 20%);
+  --lumina-shadow-md: 0 4px 12px oklch(0 0 0 / 35%), 0 2px 4px oklch(0 0 0 / 25%);
+  --lumina-shadow-lg: 0 12px 30px oklch(0 0 0 / 40%), 0 4px 10px oklch(0 0 0 / 30%);
+  --lumina-shadow-xl: 0 24px 60px oklch(0 0 0 / 50%), 0 8px 20px oklch(0 0 0 / 35%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --lumina-color-background:           oklch(0.076 0.02 265);
+    --lumina-color-surface:              oklch(0.115 0.018 265);
+    --lumina-color-surface-raised:       oklch(0.155 0.018 265);
+    --lumina-color-foreground:           oklch(0.96 0.005 265);
+    --lumina-color-foreground-muted:     oklch(0.52 0.03 265);
+    --lumina-color-muted-foreground:     oklch(0.52 0.03 265);
+    --lumina-color-primary:              oklch(0.63 0.22 265);
+    --lumina-color-primary-hover:        oklch(0.70 0.22 265);
+    --lumina-color-primary-foreground:   oklch(0.99 0 0);
+    --lumina-color-primary-glow:         oklch(0.63 0.22 265 / 35%);
+    --lumina-color-secondary:            oklch(0.155 0.02 265);
+    --lumina-color-secondary-foreground: oklch(0.88 0.01 265);
+    --lumina-color-muted:                oklch(0.155 0.02 265);
+    --lumina-color-accent:               oklch(0.18 0.02 265);
+    --lumina-color-accent-foreground:    oklch(0.96 0.005 265);
+    --lumina-color-destructive:          oklch(0.68 0.22 22);
+    --lumina-color-destructive-hover:    oklch(0.74 0.22 22);
+    --lumina-color-destructive-foreground: oklch(0.99 0 0);
+    --lumina-color-destructive-glow:     oklch(0.68 0.22 22 / 35%);
+    --lumina-color-border:               oklch(1 0 0 / 9%);
+    --lumina-color-input:                oklch(1 0 0 / 7%);
+    --lumina-color-ring:                 oklch(0.63 0.22 265 / 40%);
+    --lumina-color-overlay:              oklch(0 0 0 / 65%);
+    --lumina-gradient-primary: linear-gradient(135deg, oklch(0.63 0.22 265), oklch(0.62 0.20 292));
+    --lumina-gradient-destructive: linear-gradient(135deg, oklch(0.68 0.22 22), oklch(0.65 0.20 8));
+    --lumina-shadow-xs: 0 1px 2px oklch(0 0 0 / 25%);
+    --lumina-shadow-sm: 0 1px 3px oklch(0 0 0 / 30%), 0 1px 2px oklch(0 0 0 / 20%);
+    --lumina-shadow-md: 0 4px 12px oklch(0 0 0 / 35%), 0 2px 4px oklch(0 0 0 / 25%);
+    --lumina-shadow-lg: 0 12px 30px oklch(0 0 0 / 40%), 0 4px 10px oklch(0 0 0 / 30%);
+    --lumina-shadow-xl: 0 24px 60px oklch(0 0 0 / 50%), 0 8px 20px oklch(0 0 0 / 35%);
+  }
+}

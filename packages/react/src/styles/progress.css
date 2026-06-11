@@ -1,0 +1,35 @@
+.lumina-progress {
+  position: relative;
+  height: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--lumina-radius-full);
+  background-color: var(--lumina-color-surface-raised);
+  box-shadow: var(--lumina-shadow-xs) inset;
+}
+
+.lumina-progress__indicator {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--lumina-radius-full);
+}
+
+.lumina-progress--default .lumina-progress__indicator {
+  background: var(--lumina-gradient-primary);
+  box-shadow: 0 0 8px var(--lumina-color-primary-glow);
+}
+
+.lumina-progress--success .lumina-progress__indicator {
+  background: linear-gradient(90deg, oklch(0.50 0.18 150), oklch(0.55 0.18 165));
+  box-shadow: 0 0 8px oklch(0.50 0.18 150 / 40%);
+}
+
+.lumina-progress--warning .lumina-progress__indicator {
+  background: linear-gradient(90deg, oklch(0.65 0.18 70), oklch(0.68 0.18 55));
+  box-shadow: 0 0 8px oklch(0.65 0.18 70 / 40%);
+}
+
+.lumina-progress--destructive .lumina-progress__indicator {
+  background: var(--lumina-gradient-destructive);
+  box-shadow: 0 0 8px var(--lumina-color-destructive-glow);
+}

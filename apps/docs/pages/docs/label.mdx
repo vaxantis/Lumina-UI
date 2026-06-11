@@ -1,0 +1,48 @@
+---
+title: Label
+---
+
+# Label
+
+An accessible label built on `@radix-ui/react-label`. Associates with form controls and correctly handles click-through to the underlying input.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add label
+# deps: @radix-ui/react-label clsx
+```
+
+## Usage
+
+```tsx
+import { Label, Input } from '@lumina-ui/react'
+
+export default function Example() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+      <Label htmlFor="name">Full name</Label>
+      <Input id="name" placeholder="John Doe" />
+    </div>
+  )
+}
+```
+
+## With Checkbox
+
+```tsx
+import { Label, Checkbox } from '@lumina-ui/react'
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Checkbox id="terms" />
+  <Label htmlFor="terms">I accept the terms and conditions</Label>
+</div>
+```
+
+## Props
+
+Accepts all props of the native `<label>` element. `htmlFor` wires the accessible association.

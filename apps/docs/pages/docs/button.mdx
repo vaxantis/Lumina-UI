@@ -1,0 +1,95 @@
+---
+title: Button
+---
+
+import { Callout } from 'nextra/components'
+
+# Button
+
+An accessible button built on the native `<button>` element with a press scale animation and optional loading state. Uses `@radix-ui/react-slot` for polymorphic rendering via `asChild`.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add button
+# deps: @radix-ui/react-slot framer-motion clsx
+```
+
+## Usage
+
+```tsx
+import { Button } from '@lumina-ui/react'
+
+export default function Example() {
+  return <Button>Click me</Button>
+}
+```
+
+## Variants
+
+```tsx
+<Button variant="default">Default</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+## Sizes
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+```
+
+## Loading state
+
+```tsx
+<Button loading>Saving…</Button>
+```
+
+Shows a spinner, disables the button, and sets `aria-busy`.
+
+## Polymorphic with `asChild`
+
+```tsx
+import Link from 'next/link'
+import { Button } from '@lumina-ui/react'
+
+<Button asChild>
+  <Link href="/dashboard">Go to dashboard</Link>
+</Button>
+```
+
+The button styling is applied to `<Link>` with no extra DOM wrapper.
+
+<Callout>
+  When `asChild` is `true`, Framer Motion press animations are not applied (the child
+  element type is unknown). For link buttons where animation matters, wrap the link
+  in a regular `<Button>` and handle navigation separately.
+</Callout>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'secondary' \| 'destructive' \| 'outline' \| 'ghost' \| 'link'` | `'default'` | Visual style |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size preset |
+| `asChild` | `boolean` | `false` | Render as the child element |
+| `loading` | `boolean` | `false` | Show spinner and set aria-busy |
+| `disabled` | `boolean` | `false` | Disable the button |
+
+All other `<button>` HTML attributes are forwarded.
+
+## Accessibility
+
+- Uses native `<button>` — receives focus, `Enter`/`Space` activate it
+- `loading` sets `aria-busy` and `disabled` to prevent double-submit
+- Focus ring uses `--lumina-color-ring` visible on keyboard navigation
+- Press animation disabled when `prefers-reduced-motion` is set

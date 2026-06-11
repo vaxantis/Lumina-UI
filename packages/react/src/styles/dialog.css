@@ -1,0 +1,87 @@
+.lumina-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: var(--lumina-color-overlay);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.lumina-dialog-content {
+  position: fixed;
+  /* inset:0 + margin:auto centers without transform — safe for Framer Motion */
+  inset: 0;
+  z-index: 50;
+  margin: auto;
+  width: calc(100% - 2rem);
+  max-width: 30rem;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  border-radius: var(--lumina-radius-xl);
+  background-color: var(--lumina-color-surface);
+  padding: var(--lumina-space-6);
+  box-shadow:
+    var(--lumina-shadow-xl),
+    0 0 0 1px var(--lumina-color-border),
+    0 0 80px var(--lumina-color-primary-glow);
+  border: 1px solid var(--lumina-color-border);
+  /* Subtle gradient edge highlight */
+  background-image: linear-gradient(
+    145deg,
+    oklch(1 0 0 / 3%) 0%,
+    transparent 40%
+  );
+}
+
+/* Scrollbar styling inside dialog */
+.lumina-dialog-content::-webkit-scrollbar {
+  width: 4px;
+}
+.lumina-dialog-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.lumina-dialog-content::-webkit-scrollbar-thumb {
+  background: var(--lumina-color-border);
+  border-radius: var(--lumina-radius-full);
+}
+
+.lumina-dialog-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lumina-space-2);
+  margin-bottom: var(--lumina-space-5);
+}
+
+.lumina-dialog-title {
+  font-family: var(--lumina-font-sans);
+  font-size: var(--lumina-font-size-lg);
+  font-weight: var(--lumina-font-weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: var(--lumina-line-height-tight);
+  color: var(--lumina-color-foreground);
+  margin: 0;
+}
+
+.lumina-dialog-description {
+  font-family: var(--lumina-font-sans);
+  font-size: var(--lumina-font-size-sm);
+  color: var(--lumina-color-foreground-muted);
+  line-height: var(--lumina-line-height-normal);
+  margin: 0;
+}
+
+.lumina-dialog-footer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--lumina-space-2);
+  margin-top: var(--lumina-space-6);
+  padding-top: var(--lumina-space-4);
+  border-top: 1px solid var(--lumina-color-border);
+}
+
+@media (min-width: 640px) {
+  .lumina-dialog-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

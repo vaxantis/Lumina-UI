@@ -1,0 +1,92 @@
+---
+title: Tooltip
+---
+
+import { Callout } from 'nextra/components'
+
+# Tooltip
+
+A floating tooltip built on `@radix-ui/react-tooltip` with a scale fade animation.
+
+<Callout>
+  Wrap your app root with `TooltipProvider` once to configure shared settings like `delayDuration`.
+</Callout>
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add tooltip
+# deps: @radix-ui/react-tooltip framer-motion clsx
+```
+
+## Setup
+
+```tsx
+// layout.tsx or _app.tsx
+import { TooltipProvider } from '@lumina-ui/react'
+
+export default function Layout({ children }) {
+  return <TooltipProvider>{children}</TooltipProvider>
+}
+```
+
+## Usage
+
+```tsx
+import { Tooltip, TooltipTrigger, TooltipContent } from '@lumina-ui/react'
+import { Button } from '@lumina-ui/react'
+
+export default function Example() {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline">Hover me</Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        This is a tooltip
+      </TooltipContent>
+    </Tooltip>
+  )
+}
+```
+
+## Positioning
+
+```tsx
+<TooltipContent side="right" align="start" sideOffset={8}>
+  Right-aligned tooltip
+</TooltipContent>
+```
+
+## Props — TooltipProvider
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delayDuration` | `number` | `400` | Delay in ms before showing |
+
+## Props — Tooltip
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | — | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Change handler |
+| `defaultOpen` | `boolean` | `false` | Initial open state |
+| `delayDuration` | `number` | — | Override provider delay |
+
+## Props — TooltipContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `'top' \| 'right' \| 'bottom' \| 'left'` | `'top'` | Preferred side |
+| `sideOffset` | `number` | `6` | Distance from trigger in px |
+| `align` | `'start' \| 'center' \| 'end'` | `'center'` | Alignment along axis |
+
+## Accessibility
+
+- `role="tooltip"` on the content
+- Associated to the trigger via `aria-describedby` (managed by Radix)
+- Animation disabled when `prefers-reduced-motion` is set

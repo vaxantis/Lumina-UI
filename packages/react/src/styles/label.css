@@ -1,0 +1,14 @@
+.lumina-label {
+  display: inline-block;
+  font-family: var(--lumina-font-sans);
+  font-size: var(--lumina-font-size-sm);
+  font-weight: var(--lumina-font-weight-medium);
+  line-height: 1;
+  color: var(--lumina-color-foreground);
+  cursor: default;
+}
+
+.lumina-label[data-disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

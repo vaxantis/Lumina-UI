@@ -1,0 +1,92 @@
+---
+title: Theming
+---
+
+# Theming
+
+Lumina UI uses CSS custom properties (variables) for all design decisions. Override any token to theme the whole library at once.
+
+## Token reference
+
+```css
+/* colours */
+--lumina-color-background
+--lumina-color-foreground
+--lumina-color-primary
+--lumina-color-primary-foreground
+--lumina-color-secondary
+--lumina-color-secondary-foreground
+--lumina-color-muted
+--lumina-color-muted-foreground
+--lumina-color-accent
+--lumina-color-accent-foreground
+--lumina-color-destructive
+--lumina-color-destructive-foreground
+--lumina-color-border
+--lumina-color-input
+--lumina-color-ring
+--lumina-color-overlay
+
+/* border radius */
+--lumina-radius-sm --lumina-radius-md --lumina-radius-lg --lumina-radius-full
+
+/* typography */
+--lumina-font-sans --lumina-font-mono
+--lumina-font-size-xs --lumina-font-size-sm --lumina-font-size-base --lumina-font-size-lg
+
+/* spacing (used internally) */
+--lumina-space-1 through --lumina-space-8
+
+/* shadows */
+--lumina-shadow-sm --lumina-shadow-md --lumina-shadow-xl
+
+/* animation */
+--lumina-duration-fast --lumina-duration-normal --lumina-easing-default
+```
+
+## Dark mode
+
+Add `.lumina-dark` to your `<html>` or root element, or keep the default auto behaviour which reads `prefers-color-scheme`:
+
+```tsx
+// toggle dark mode
+document.documentElement.classList.toggle('lumina-dark')
+
+// force light mode and disable auto-switch
+document.documentElement.setAttribute('data-theme', 'light')
+```
+
+## Custom theme example
+
+```css
+/* my-theme.css */
+:root {
+  /* Brand blue */
+  --lumina-color-primary:            oklch(0.55 0.22 255);
+  --lumina-color-primary-foreground: oklch(0.98 0 0);
+
+  /* Softer radius */
+  --lumina-radius-md: 0.75rem;
+  --lumina-radius-lg: 1rem;
+
+  /* Custom font */
+  --lumina-font-sans: "Inter", system-ui, sans-serif;
+}
+```
+
+Import this file after `@lumina-ui/react/styles` (or after the tokens layer when using the CLI):
+
+```ts
+import '@lumina-ui/react/styles'
+import './my-theme.css'
+```
+
+## Scoped themes
+
+Apply tokens to a sub-tree:
+
+```css
+.admin-section {
+  --lumina-color-primary: oklch(0.55 0.2 30); /* orange for admin */
+}
+```

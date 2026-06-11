@@ -1,0 +1,92 @@
+---
+title: Accordion
+---
+
+# Accordion
+
+A vertically stacked set of expandable sections built on `@radix-ui/react-accordion`. Height transitions are driven by Radix's `--radix-accordion-content-height` CSS variable.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add accordion
+# deps: @radix-ui/react-accordion clsx
+```
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@lumina-ui/react'
+
+export default function Example() {
+  return (
+    <Accordion type="single" collapsible style={{ width: '100%', maxWidth: '480px' }}>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>What is Lumina UI?</AccordionTrigger>
+        <AccordionContent>
+          A headless, accessible React component library built on Radix UI primitives
+          with Framer Motion animations.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is it styled?</AccordionTrigger>
+        <AccordionContent>
+          Lumina UI is headless — it ships CSS variable tokens but no visual opinions.
+          Override tokens to apply your brand.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Does it support dark mode?</AccordionTrigger>
+        <AccordionContent>
+          Yes. Add `.lumina-dark` to your root element, or rely on the automatic
+          `prefers-color-scheme` media query.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+```
+
+## Multiple items open
+
+```tsx
+<Accordion type="multiple">
+  <AccordionItem value="a">…</AccordionItem>
+  <AccordionItem value="b">…</AccordionItem>
+</Accordion>
+```
+
+## Controlled
+
+```tsx
+const [value, setValue] = useState<string>('')
+<Accordion type="single" value={value} onValueChange={setValue} collapsible>
+  …
+</Accordion>
+```
+
+## Props — Accordion
+
+Passes all props to `@radix-ui/react-accordion` Root. Key props:
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `type` | `'single' \| 'multiple'` | Single or multiple items open |
+| `collapsible` | `boolean` | Allow closing the open item (`type="single"` only) |
+| `value` / `defaultValue` | `string \| string[]` | Controlled / default open items |
+
+## Accessibility
+
+- Each trigger has `role="button"` with `aria-expanded` managed by Radix
+- Content regions are associated with their trigger via `aria-controls`
+- Keyboard: `Enter`/`Space` toggle, `Tab` moves between triggers
+- Height/opacity animation disabled when `prefers-reduced-motion` is set

@@ -1,0 +1,91 @@
+---
+title: Getting Started
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Getting Started
+
+<Steps>
+
+### Install the package
+
+```bash
+npm install @lumina-ui/react framer-motion
+# or
+pnpm add @lumina-ui/react framer-motion
+```
+
+### Import the stylesheet
+
+Add this import once in your app entry (e.g. `_app.tsx`, `layout.tsx`, `main.tsx`):
+
+```ts
+import '@lumina-ui/react/styles'
+```
+
+This loads the design tokens CSS and all component base styles.
+
+### Use a component
+
+```tsx
+import { Button, Dialog, DialogTrigger, DialogContent, DialogTitle } from '@lumina-ui/react'
+
+export default function Demo() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open dialog</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogTitle>Hello from Lumina UI</DialogTitle>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```
+
+### (Optional) Wrap with TooltipProvider
+
+If you're using `Tooltip`, wrap your app root:
+
+```tsx
+import { TooltipProvider } from '@lumina-ui/react'
+
+export default function Layout({ children }) {
+  return <TooltipProvider>{children}</TooltipProvider>
+}
+```
+
+</Steps>
+
+## Using the CLI instead
+
+<Callout>
+  The CLI copies component source into your project. You own the files and can edit them freely.
+</Callout>
+
+```bash
+# 1. Add design tokens
+npx lumina-ui init
+
+# 2. Add components one by one
+npx lumina-ui add button
+npx lumina-ui add dialog
+npx lumina-ui add tooltip
+
+# 3. See all available components
+npx lumina-ui list
+```
+
+After adding a component the CLI tells you which peer dependencies to install.
+
+## TypeScript
+
+All components ship with full TypeScript types. No `@types/*` package needed.
+
+```tsx
+import type { ButtonProps, ButtonVariant } from '@lumina-ui/react'
+
+const variant: ButtonVariant = 'destructive'
+```

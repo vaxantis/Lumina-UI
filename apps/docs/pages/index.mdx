@@ -1,0 +1,58 @@
+---
+title: Lumina UI
+---
+
+import { Callout } from 'nextra/components'
+
+# Lumina UI
+
+**Headless, accessible React components with Framer Motion animations.**
+
+Lumina UI is a component library built on [Radix UI](https://www.radix-ui.com/) primitives and [Framer Motion](https://www.framer.com/motion/). It ships with design tokens you control and zero visual opinions — style it however you want.
+
+## Features
+
+- **Accessible by default** — WAI-ARIA compliant, keyboard navigable, screen-reader tested
+- **Animated** — Framer Motion transitions that automatically respect `prefers-reduced-motion`
+- **Headless** — CSS variable tokens, no forced visual style. Own the look completely
+- **Two distribution models** — install as `@lumina-ui/react` or copy components with the CLI
+
+## Quick start
+
+### Option A — npm package
+
+```bash
+npm install @lumina-ui/react framer-motion
+```
+
+Import the styles once in your app:
+
+```ts
+import '@lumina-ui/react/styles'
+```
+
+Use components:
+
+```tsx
+import { Button } from '@lumina-ui/react'
+
+export default function Page() {
+  return <Button variant="default">Click me</Button>
+}
+```
+
+### Option B — CLI (copy-paste)
+
+```bash
+npx lumina-ui init      # adds lumina-tokens.css to your project
+npx lumina-ui add button
+```
+
+<Callout type="info">
+  The CLI copies the component source into your project so you own and can edit it freely.
+  Install the listed peer dependencies after each `add`.
+</Callout>
+
+## Philosophy
+
+Lumina UI wraps Radix UI primitives — all accessibility behaviour (focus traps, keyboard navigation, ARIA attributes) comes from Radix for free. Framer Motion handles animations with a `useReducedMotion` gate on every component so users who prefer reduced motion are always respected.

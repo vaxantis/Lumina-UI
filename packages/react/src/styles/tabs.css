@@ -1,0 +1,73 @@
+.lumina-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lumina-space-4);
+}
+
+.lumina-tabs__list {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lumina-space-1);
+  padding: 0.25rem;
+  background-color: var(--lumina-color-surface);
+  border: 1px solid var(--lumina-color-border);
+  border-radius: var(--lumina-radius-lg);
+  width: fit-content;
+}
+
+.lumina-tabs__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lumina-space-2);
+  padding: 0.4rem var(--lumina-space-4);
+  font-family: var(--lumina-font-sans);
+  font-size: var(--lumina-font-size-sm);
+  font-weight: var(--lumina-font-weight-medium);
+  color: var(--lumina-color-foreground-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--lumina-radius-md);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color var(--lumina-duration-fast) var(--lumina-easing-default),
+    background-color var(--lumina-duration-fast) var(--lumina-easing-default),
+    box-shadow var(--lumina-duration-normal) var(--lumina-easing-default);
+}
+
+.lumina-tabs__trigger:hover:not([data-state="active"]) {
+  color: var(--lumina-color-foreground);
+  background-color: var(--lumina-color-surface-raised);
+}
+
+.lumina-tabs__trigger[data-state="active"] {
+  background: var(--lumina-gradient-primary);
+  color: var(--lumina-color-primary-foreground);
+  box-shadow: 0 1px 0 oklch(1 0 0 / 15%) inset, 0 2px 8px var(--lumina-color-primary-glow);
+}
+
+.lumina-tabs__trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lumina-color-ring);
+}
+
+.lumina-tabs__trigger:disabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.lumina-tabs__content {
+  outline: none;
+}
+
+.lumina-tabs__content:focus-visible {
+  box-shadow: 0 0 0 2px var(--lumina-color-ring);
+  border-radius: var(--lumina-radius-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumina-tabs__trigger {
+    transition: none;
+  }
+}

@@ -1,0 +1,73 @@
+---
+title: Checkbox
+---
+
+# Checkbox
+
+An accessible checkbox built on `@radix-ui/react-checkbox` with an animated check/indeterminate icon powered by Framer Motion.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add checkbox
+# deps: @radix-ui/react-checkbox framer-motion clsx
+```
+
+## Usage
+
+```tsx
+import { Checkbox, Label } from '@lumina-ui/react'
+
+export default function Example() {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <Checkbox id="accept" />
+      <Label htmlFor="accept">Accept terms and conditions</Label>
+    </div>
+  )
+}
+```
+
+## Controlled
+
+```tsx
+import { useState } from 'react'
+import { Checkbox } from '@lumina-ui/react'
+
+export default function Controlled() {
+  const [checked, setChecked] = useState(false)
+  return (
+    <Checkbox
+      checked={checked}
+      onCheckedChange={(value) => setChecked(value === true)}
+    />
+  )
+}
+```
+
+## Indeterminate state
+
+```tsx
+<Checkbox checked="indeterminate" aria-label="Select all" />
+```
+
+Shows a dash icon when in the indeterminate state.
+
+## Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `checked` | `boolean \| 'indeterminate'` | Controlled checked state |
+| `defaultChecked` | `boolean` | Uncontrolled initial state |
+| `onCheckedChange` | `(checked: boolean \| 'indeterminate') => void` | Change handler |
+| `disabled` | `boolean` | Disables the checkbox |
+
+## Accessibility
+
+- `role="checkbox"` with `aria-checked` managed by Radix
+- Keyboard: `Space` toggles, works inside forms
+- Animation disabled when `prefers-reduced-motion` is set

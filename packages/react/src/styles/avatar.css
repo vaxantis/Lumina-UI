@@ -1,0 +1,38 @@
+.lumina-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lumina-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  /* Subtle ring */
+  box-shadow: 0 0 0 2px var(--lumina-color-background), 0 0 0 3px var(--lumina-color-border);
+}
+
+.lumina-avatar--xs { width: 1.5rem;  height: 1.5rem;  }
+.lumina-avatar--sm { width: 2rem;    height: 2rem;    }
+.lumina-avatar--md { width: 2.5rem;  height: 2.5rem;  }
+.lumina-avatar--lg { width: 3.5rem;  height: 3.5rem;  }
+.lumina-avatar--xl { width: 5rem;    height: 5rem;    }
+
+.lumina-avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lumina-avatar__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--lumina-gradient-primary);
+  color: var(--lumina-color-primary-foreground);
+  font-family: var(--lumina-font-sans);
+  font-weight: var(--lumina-font-weight-semibold);
+  font-size: 0.42em;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}

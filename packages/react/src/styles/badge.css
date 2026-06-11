@@ -1,0 +1,51 @@
+.lumina-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lumina-radius-full);
+  border: 1px solid transparent;
+  padding: 0.2rem 0.625rem;
+  font-family: var(--lumina-font-sans);
+  font-size: 0.7rem;
+  font-weight: var(--lumina-font-weight-semibold);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: opacity var(--lumina-duration-fast) var(--lumina-easing-default);
+}
+
+.lumina-badge--default {
+  background: var(--lumina-gradient-primary);
+  color: var(--lumina-color-primary-foreground);
+  box-shadow: 0 1px 4px var(--lumina-color-primary-glow);
+}
+
+.lumina-badge--secondary {
+  background-color: var(--lumina-color-secondary);
+  color: var(--lumina-color-secondary-foreground);
+  border-color: var(--lumina-color-border);
+}
+
+.lumina-badge--destructive {
+  background: var(--lumina-gradient-destructive);
+  color: var(--lumina-color-destructive-foreground);
+  box-shadow: 0 1px 4px var(--lumina-color-destructive-glow);
+}
+
+.lumina-badge--outline {
+  background: transparent;
+  color: var(--lumina-color-primary);
+  border-color: oklch(0.63 0.22 265 / 40%);
+}
+
+.lumina-badge--success {
+  background-color: oklch(0.45 0.18 150 / 15%);
+  color: oklch(0.65 0.18 150);
+  border-color: oklch(0.55 0.18 150 / 30%);
+}
+
+.lumina-badge--warning {
+  background-color: oklch(0.65 0.18 70 / 15%);
+  color: oklch(0.75 0.18 70);
+  border-color: oklch(0.70 0.18 70 / 30%);
+}

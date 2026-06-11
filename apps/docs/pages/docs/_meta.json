@@ -1,0 +1,16 @@
+{
+  "getting-started": "Getting Started",
+  "theming": "Theming",
+  "---": {
+    "type": "separator",
+    "title": "Components"
+  },
+  "button": "Button",
+  "input": "Input",
+  "label": "Label",
+  "checkbox": "Checkbox",
+  "switch": "Switch",
+  "dialog": "Dialog",
+  "tooltip": "Tooltip",
+  "accordion": "Accordion"
+}

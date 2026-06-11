@@ -1,0 +1,62 @@
+---
+title: Switch
+---
+
+# Switch
+
+An accessible toggle switch built on `@radix-ui/react-switch`. The thumb slides with a spring animation when toggled.
+
+## Installation
+
+```bash
+# Package
+npm install @lumina-ui/react
+
+# CLI
+npx lumina-ui add switch
+# deps: @radix-ui/react-switch framer-motion clsx
+```
+
+## Usage
+
+```tsx
+import { Switch, Label } from '@lumina-ui/react'
+
+export default function Example() {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <Switch id="notifications" />
+      <Label htmlFor="notifications">Enable notifications</Label>
+    </div>
+  )
+}
+```
+
+## Controlled
+
+```tsx
+import { useState } from 'react'
+import { Switch } from '@lumina-ui/react'
+
+export default function Controlled() {
+  const [enabled, setEnabled] = useState(false)
+  return (
+    <Switch checked={enabled} onCheckedChange={setEnabled} aria-label="Dark mode" />
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `checked` | `boolean` | Controlled on/off state |
+| `defaultChecked` | `boolean` | Uncontrolled initial state |
+| `onCheckedChange` | `(checked: boolean) => void` | Change handler |
+| `disabled` | `boolean` | Disables the switch |
+
+## Accessibility
+
+- `role="switch"` with `aria-checked` managed by Radix
+- Keyboard: `Space` toggles
+- Thumb spring animation disabled when `prefers-reduced-motion` is set
