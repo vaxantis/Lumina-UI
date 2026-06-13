@@ -48,7 +48,7 @@
   Replace the placeholder below with a real screenshot of your demo page.
   Run: pnpm dev → navigate to localhost:3000/demo → take a screenshot → save as .github/demo.png
 -->
-<img src="https://placehold.co/900x500/0d0d1a/6366f1?text=Demo+Screenshot+(replace+with+real+one)&font=inter" alt="Lumina UI Demo" width="900" style="border-radius:12px; border: 1px solid rgba(99,102,241,0.3);" />
+<img src="https://res.cloudinary.com/dqy9hanef/image/upload/v1781274049/scq3j98qzhqxr02zrkpk.png" alt="Lumina UI Demo" width="900" style="border-radius:12px; border: 1px solid rgba(99,102,241,0.3);" />
 
 <br/><br/>
 
